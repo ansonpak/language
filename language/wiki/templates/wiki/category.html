@@ -19,7 +19,7 @@
 <a href={{page.url}}>{{page.title}}</a>
 </td>
 <td>
-<form action={% url 'wiki:updatePage' category.name page.id %}>
+<form action={% url 'wiki:updatePage' page.id %}>
 <input type=submit value=修改>
 </form>
 </td>
@@ -35,9 +35,10 @@
 {% else %}
 <p><strong>此類別目前並無頁面。</strong></p>
 {% endif %}
-<p><a href={% url 'wiki:addPage' category.name %}>新增頁面</a></p>
+<p><a href={% url 'wiki:addPage' category.id %}>新增頁面</a></p>
 {% else %}
 <p>所指定的類別「{{categoryName}}」不存在。</p>
 {% endif %}
+<p><a href={% url 'wiki:wiki' %}>回wiki頁面</a></p>
 </body>
 </html>

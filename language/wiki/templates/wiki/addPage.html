@@ -8,12 +8,12 @@
 </head>
 <body>
 <h1>在"{{category.name}}"類別中新增一筆頁面</h1>
-<form method=post action={% url 'wiki:addPage' category.name %}>
+<form method=post action={% url 'wiki:addPage' category.id %}>
  {% csrf_token %}
  {{form.as_p}}
  <input type=submit value=送出>
 </form>
 <br>
-<p><a href={%  url 'wiki:category' category.name %}>回{{category.name}}頁</a><p>
+<p><a href={%  url 'wiki:category' category.id %}>回{{category.name}}頁</a><p>
 </body>
 </html>

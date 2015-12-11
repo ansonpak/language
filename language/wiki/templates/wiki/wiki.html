@@ -14,7 +14,7 @@
 		<tr><th>分類名稱</th><th></th><th></th></tr>
 		{% for category in categories %}
 			<tr>
- 				<td><a href={% url 'wiki:category' category.name %}>{{category.name}}</a></td>
+ 				<td><a href={% url 'wiki:category' category.id %}>{{category.name}}</a></td>
  				<td>
 					<form action={% url 'wiki:updateCategory' category.id %}>
 						<input type="submit" value=修改>
